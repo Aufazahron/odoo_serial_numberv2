@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_serial_number_config_form" model="ir.ui.view">
+        <field name="name">serial.number.config.form</field>
+        <field name="model">serial.number.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="Prefix"/>
+                        <field name="serial_list" widget="one2many_list">
+                            <tree>
+                                <field name="serial_number"/>
+                                <field name="reference"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_serial_number_config_tree" model="ir.ui.view">
+        <field name="name">serial.number.config.tree</field>
+        <field name="model">serial.number.config</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_serial_number_config"
+              name="Serial Number Configurations"
+              parent="mrp.menu_mrp_configuration"
+              action="action_serial_number_config"/>
+</odoo>
